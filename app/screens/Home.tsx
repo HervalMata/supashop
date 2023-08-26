@@ -1,13 +1,10 @@
 import React from "react";
-import { SafeAreaView, Text } from "react-native";
-import Auth from "../components/Auth";
+import { Text, SafeAreaView } from "react-native";
 
 export default function Home() {
-    const e = process.env.SUPABASE_URL;
-
     return (
         <SafeAreaView>
-            <Auth />
+            <Text>from Home</Text>
         </SafeAreaView>
     );
 }
