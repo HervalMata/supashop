@@ -1,11 +1,12 @@
 import React from "react";
-import { View, Text, SafeAreaView } from "react-native";
+import { View, SafeAreaView } from "react-native";
+import MyAuth from "../components/MyAuth";
 
 export default function Auth() {
     return (
         <SafeAreaView>
             <View>
-                <Text>Auth</Text>
+                <MyAuth />
             </View>
         </SafeAreaView>
     );
