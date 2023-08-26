@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Alert, StyleSheet, View } from "react-native";
 import { supabase } from "../lib/supabase";
 import { Button, Input } from "react-native-elements";
@@ -31,7 +31,7 @@ export default function Auth() {
     }
 
     return (
-        <View>
+        <View className="p-2">
             <View>
                 <Input
                     label="Email"
@@ -59,6 +59,7 @@ export default function Auth() {
                 <Button 
                     title="Entrar"
                     disabled={loading}
+                    className=""
                     onPress={() => signInWithEmail()}
                 />
             </View>
