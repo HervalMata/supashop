@@ -7,6 +7,10 @@ import { HomeIcon, UserIcon, HeartIcon, ShoppingBagIcon } from "react-native-her
 
 const tab = createMaterialBottomTabNavigator();
 
+interface IconProps {
+    color: string;
+}
+
 function NavTab() {
     return (
         <Tab.Navigator
@@ -19,28 +23,28 @@ function NavTab() {
                 component={Home}
                 options={{
                     tabBarLabel: "Home",
-                    tabBarIcon: ({ color }) => <HomeIcon color={color} size={20} />
+                    tabBarIcon: ({ color }: IconProps) => <HomeIcon color={color} size={20} />
                 }}
             />
             <Tab.Screen
                 name="Card"
                 component={Card}
                 options={{
-                    tabBarIcon: ({ color }) => <ShopopingBagIcon color={color} size={20} />
+                    tabBarIcon: ({ color }: IconProps) => <ShopopingBagIcon color={color} size={20} />
                 }}
             />
             <Tab.Screen
                 name="Favorite"
                 component={Favorite}
                 options={{
-                    tabBarIcon: ({ color }) => <HeartIcon color={color} size={20} />
+                    tabBarIcon: ({ color }: IconProps) => <HeartIcon color={color} size={20} />
                 }}
             />
             <Tab.Screen
                 name="Profile"
                 component={Profile}
                 options={{
-                    tabBarIcon: ({ color }) => <UserIcon color={color} size={20} />
+                    tabBarIcon: ({ color }: IconProps) => <UserIcon color={color} size={20} />
                 }}
             />
         </Tab.Navigator>

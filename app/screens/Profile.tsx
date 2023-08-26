@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { View, Text, SafeAreaView, Image, FlatList } from "react-native";
 import { Session } from "@supabase/supabase-js";
 import { supabase } from "./lib/supabase";
+import { ChevronRightIcon, MapPinIcon, NewsPaperIcon, ShoppingBagIcon, PhoneIcon, BellIcon } from "react-native-heroicons/outline";
 
 export default function Profile({}:{}): JSX.Element {
     const [session, setSession] = useState<Session | null>(null);
@@ -34,16 +35,22 @@ export default function Profile({}:{}): JSX.Element {
                     </Text>
                 </View>
             </View>
-            <View className="px-8">
+            <View className="">
                 <FlatList
                     data={[
-                        { title: "Ordens" },
-                        { title: "Meus Dados" },
-                        { title: "Enderêço de Entrega" },
-                        { title: "Notificações" },
-                        { title: "Contatos" },
+                        { title: "Ordens", icon: ShoppingBagIcon },
+                        { title: "Meus Dados", icon: NewsPaperIcon },
+                        { title: "Enderêço de Entrega", icon: MapPinIcon },
+                        { title: "Notificações", icon: BellIcon },
+                        { title: "Contatos", icon: PhoneIcon },
                     ]}
-                    renderItem={({ item }) => <Text>{item.title}</Text>}
+                    renderItem={({ item }) => (
+                        <View className="px-8 flex-row py-5 space-x-4 items-center border-b border-gray-300">
+                            <item.icon color="black" className="bg-gray-500" size={20} />
+                            <Text className="font-semibold flex-1">{item.title}</Text>
+                            <ChevronRightIcon color="black" size={20} />
+                        </View>
+                    )}
                 />
             </View>
         </SafeAreaView>
