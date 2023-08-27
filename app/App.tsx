@@ -4,7 +4,9 @@ import NavTab from "./components/NavTab";
 import { supabase } from "./lib/supabase";
 import React, { useState, useEffect } from "react";
 import { Session } from "@supabase/supabase-js";
-import Auth from "./screens/Auth";
+import Auth from "./screens/Authentication/Auth";
+import Landing from "./screens/Authentication/Landing";
+import SignUp from "./screens/Authentication/SignUp";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const Stack = createNativeStackNavigator();
@@ -28,7 +30,9 @@ export default function App() {
       {session ? (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Group>
+            <Stack.Screen name="Landing" component={Landing} />
             <Stack.Screen name="Auth" component={Auth} />
+            <Stack.Screen name="SignUp" component={SignUp} />
           </Stack.Group>
         </Stack.Navigator>
       ) : (<NavTab />)}
