@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { View, Text, SafeAreaView, Image, FlatList, Button } from "react-native";
 import { Session } from "@supabase/supabase-js";
 import { supabase } from "./lib/supabase";
-import { ChevronRightIcon, MapPinIcon, NewsPaperIcon, ShoppingBagIcon, PhoneIcon, BellIcon } from "react-native-heroicons/outline";
+import { ChevronRightIcon, MapPinIcon, NewspaperIcon, ShoppingBagIcon, PhoneIcon, BellIcon } from "react-native-heroicons/outline";
 import { Link } from "@react-navigation/native";
 
 export default function Profile({}:{}): JSX.Element {
@@ -17,7 +17,7 @@ export default function Profile({}:{}): JSX.Element {
 
     const list: { title: string, icon: Element }[] = [
         { title: "Ordens", icon: ShoppingBagIcon },
-        { title: "Meus Dados", icon: NewsPaperIcon },
+        { title: "Meus Dados", icon: NewspaperIcon },
         { title: "Enderêço de Entrega", icon: MapPinIcon },
         { title: "Notificações", icon: BellIcon },
         { title: "Contatos", icon: PhoneIcon },
@@ -33,7 +33,7 @@ export default function Profile({}:{}): JSX.Element {
                 <Image 
                     source={icon}
                     className="rounded-full"
-                    style={{ nwidth: 60, height: 60 }}
+                    style={{ width: 60, height: 60 }}
                 />
                 <View className="flex space-y-2">
                     <Text className="capitalize">

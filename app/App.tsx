@@ -1,10 +1,10 @@
-import "react-native-url-polyfill/auto";
+import "react-native-url-polyfill";
 import { NavigationContainer } from '@react-navigation/native';
 import NavTab from "./components/NavTab";
 import { supabase } from "./lib/supabase";
 import React, { useState, useEffect } from "react";
 import { Session } from "@supabase/supabase-js";
-import Aurh from "./screens/Auth";
+import Auth from "./screens/Auth";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const Stack = createNativeStackNavigator();
