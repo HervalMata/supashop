@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Alert, View, TextInput, Text, TouchableOpacity } from "react-native";
 import { supabase } from "../../lib/supabase";
 import { EyeIcon, EyeSlashIcon } from "react-native-heroicons/outline";
+// @ts-ignore
 import { Link } from "react-navigation/native";
-import AuthSkeleton from "../../components//AuthSkeleton";
+import AuthSkeleton from "../../components/authentication/AuthSkeleton";
 import MyButton from "../../components/reusables/MyButton";
 
 export default function MyAuth({ navigation }: { navigation: any }) {
@@ -54,8 +55,10 @@ export default function MyAuth({ navigation }: { navigation: any }) {
                     onPress={() => setShowPassword(!showPassword)}
                 >
                     {showPassword ? (
+                        // @ts-ignore
                         <EyeIcon color="black" className="bg-gray-500" size={20} />
                     ) : (
+                        // @ts-ignore
                         <EyeSlashIcon color="black" className="bg-gray-500" size={20} />
                     )}
                 </TouchableOpacity>

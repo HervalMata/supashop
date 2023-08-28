@@ -1,5 +1,5 @@
 import React from "react";
-import { Alert, View, TextInput, Text, TouchableOpacity, SafeAreaView, ImageBackground, Image } from "react-native";
+import { View, Text, TouchableOpacity, SafeAreaView, ImageBackground, Image } from "react-native";
 import MyButton from "../../components/reusables/MyButton";
 
 export default function Landing({

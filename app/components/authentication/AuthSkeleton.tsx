@@ -1,5 +1,5 @@
 import { View, Text, SafeAreaView, ImageBackground, Image } from 'react-native';
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 export default function AuthSkeleton({
     children,
