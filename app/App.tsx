@@ -13,23 +13,37 @@ import Notifications from "./screens/Profile/Notifications";
 import Orders from "./screens/Profile/Orders";
 import MyDetails from "./screens/Profile/MyDetails";
 import DeliveryAddress from "./screens/Profile/DeliveryAddress";
+import { ActiveIndicator, View } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   const [session, setSession] = useState<Session | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
+      setLoading(true);
       setSession(session);
+      setLoading(false);
     });
 
     supabase.auth.onAuthStateChange((_event, session) => {
+      setLoading(true);
       setSession(session);
+      setLoading(false);
     });
   
   }, []);
+
+  if (loading) {
+    return (
+      <View>
+        <ActiveIndicator />
+      </View>
+    );
+  }
   
   return (
     <NavigationContainer>
