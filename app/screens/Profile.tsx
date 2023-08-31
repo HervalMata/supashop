@@ -10,11 +10,14 @@ export default function Profile({ navigation }:{}): JSX.Element {
     const [session, setSession] = useState<Session | null>(null);
 
     useEffect(() => {
-        supabase.auth.getSession().then(({ data: { session } }) => {
-          setSession(session);
-        });
-      
+        fetchProfile();
       }, []);
+
+    const fetchProfile = () => {
+        supabase.auth.getSession().then(({ data: { session } }) => {
+            setSession(session);
+          });
+    }
 
     const list: { title: string, icon: Element, link: string }[] = [
         { title: "Ordens", icon: ShoppingBagIcon, link: "Orders" },

@@ -59,6 +59,7 @@ export default function App() {
         <Stack.Navigator
             screenOptions={{ headerShown: false }}
         >
+          <Stack.Group screenOptions={{ presentation: "modal" }}>
           <Stack.Screen name="Nav" component={NavTab} />
           <Stack.Screen name="MyProfile" component={MyProfile} />
           <Stack.Screen name="Notifications" component={Notifications} />
@@ -66,6 +67,7 @@ export default function App() {
           <Stack.Screen name="Orders" component={Orders} />
           <Stack.Screen name="MyDetails" component={MyDetails} />
           <Stack.Screen name="DeliveryAddress" component={DeliveryAddress} />
+          </Stack.Group>
         </Stack.Navigator>
       )}
     </NavigationContainer>
