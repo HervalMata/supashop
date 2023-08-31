@@ -7,6 +7,12 @@ import { Session } from "@supabase/supabase-js";
 import Auth from "./screens/Authentication/Auth";
 import Landing from "./screens/Authentication/Landing";
 import SignUp from "./screens/Authentication/SignUp";
+import Contact from "./screens/Profile/Contact";
+import MyProfile from "./screens/Profile/MyProfile";
+import Notifications from "./screens/Profile/Notifications";
+import Orders from "./screens/Profile/Orders";
+import MyDetails from "./screens/Profile/MyDetails";
+import DeliveryAddress from "./screens/Profile/DeliveryAddress";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const Stack = createNativeStackNavigator();
@@ -35,7 +41,18 @@ export default function App() {
             <Stack.Screen name="SignUp" component={SignUp} />
           </Stack.Group>
         </Stack.Navigator>
-      ) : (<NavTab />)}
+      ) : (
+        <Stack.Navigator
+            screenOptions={{ headerShown: false }}
+        >
+            <Stack.Screen name="MyProfile" component={MyProfile} />
+            <Stack.Screen name="Notifications" component={Notifications} />
+            <Stack.Screen name="Contact" component={Contact} />
+            <Stack.Screen name="Orders" component={Orders} />
+            <Stack.Screen name="MyDetails" component={MyDetails} />
+            <Stack.Screen name="DeliveryAddress" component={DeliveryAddress} />
+        </Stack.Navigator>
+      )}
     </NavigationContainer>
   );
 }
