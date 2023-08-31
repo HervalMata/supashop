@@ -3,6 +3,7 @@ import { ImageBackground, Text, SafeAreaView, View } from "react-native";
 
 import HomeBody from "../components/home/HomeBody";
 import HomeSkeleton from "../components/home/HomeSkeleton";
+import ChairSvg from "../components/home/ChairSvg";
 import { supabase } from '../lib/supabase';
 
 export default function Home({}) {
@@ -23,6 +24,7 @@ export default function Home({}) {
     return (
         <>
             <HomeSkeleton search={search} setSearch={setSearch}>
+                <ChairSvg />
                 <HomeBody products={products} />
             </HomeSkeleton>
         </>
