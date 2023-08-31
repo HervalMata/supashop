@@ -45,12 +45,13 @@ export default function App() {
         <Stack.Navigator
             screenOptions={{ headerShown: false }}
         >
-            <Stack.Screen name="MyProfile" component={MyProfile} />
-            <Stack.Screen name="Notifications" component={Notifications} />
-            <Stack.Screen name="Contact" component={Contact} />
-            <Stack.Screen name="Orders" component={Orders} />
-            <Stack.Screen name="MyDetails" component={MyDetails} />
-            <Stack.Screen name="DeliveryAddress" component={DeliveryAddress} />
+          <Stack.Screen name="Nav" component={NavTab} />
+          <Stack.Screen name="MyProfile" component={MyProfile} />
+          <Stack.Screen name="Notifications" component={Notifications} />
+          <Stack.Screen name="Contact" component={Contact} />
+          <Stack.Screen name="Orders" component={Orders} />
+          <Stack.Screen name="MyDetails" component={MyDetails} />
+          <Stack.Screen name="DeliveryAddress" component={DeliveryAddress} />
         </Stack.Navigator>
       )}
     </NavigationContainer>
