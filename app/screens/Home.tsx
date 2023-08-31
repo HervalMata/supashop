@@ -1,20 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { ImageBackground, Text, SafeAreaView, View } from "react-native";
 
-export default function Home() {
+import HomeBody from "../components/home/HomeBody";
+import HomeSkeleton from "../components/home/HomeSkeleton";
+
+export default function Home({}) {
+    const [search, setSearch] = useState("");
     return (
         <>
-            <View>
-                <ImageBackground
-                    resizeMode="cover"
-                    source={require("../assets/homebg.png")}
-                    style={{ opacity: 0.2 }}
-                >
-                    <SafeAreaView>
-                        <Text className="text-2x1">from Home</Text>
-                    </SafeAreaView>
-                </ImageBackground>
-            </View>
+            <HomeSkeleton search={search} setSearch={setSearch}>
+                <HomeBody />
+            </HomeSkeleton>
         </>
     );
 }

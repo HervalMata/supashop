@@ -3,7 +3,6 @@ import { View, Text, SafeAreaView, Image, FlatList, Button, TouchableOpacity } f
 import { Session } from "@supabase/supabase-js";
 import { supabase } from "../../lib/supabase";
 import { ChevronRightIcon, MapPinIcon, NewspaperIcon, ShoppingBagIcon, PhoneIcon, BellIcon } from "react-native-heroicons/outline";
-import { Link, NavigationContainer } from "@react-navigation/native";
 import MyButton from "../../components/reusables/MyButton";
 
 export default function Profile({ navigation }:{}): JSX.Element {  
